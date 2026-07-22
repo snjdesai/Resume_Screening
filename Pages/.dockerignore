@@ -1,0 +1,8 @@
+.git/
+.venv/
+venv/
+__pycache__/
+.streamlit/
+data/resumes/temp*
+.DS_Store
+.env

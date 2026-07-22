@@ -1,0 +1,44 @@
+We have an exciting and rewarding opportunity for you to take your software engineering career to the next level. 
+
+As a Software Engineer III at JPMorgan Chase within the Asset & Wealth Management, you serve as a seasoned member of an agile team to design and deliver trusted market-leading technology products in a secure, stable, and scalable way. You are responsible for carrying out critical technology solutions across multiple technical areas within various business functions in support of the firm’s business objectives.
+
+Job responsibilities
+
+ 
+
+Involves in building and operating highly sophisticated LLM driven applications.
+Partners directly with other technology teams on LLM projects to advise and assist as needed.
+Collaborates with Data Science, Cybersecurity to deliver state of the art ML products.
+Collaborates with Devops engineers to plan and deploy data storage and processing systems,
+Executes creative software solutions, design, development, and technical troubleshooting with ability to think beyond routine or conventional approaches to build solutions or break down technical problems.
+Develops secure high-quality production code, and reviews and debugs code written by others.
+Stays abreast of the latest advancements in AI technologies, and drive their integration into our operations.
+Leverages enterprise-authorized AI coding assist tools within the work environment to improve code quality, delivery speed, and productivity across complex deliverables (e.g., code generation/refactoring, unit test creation, documentation), while validating outputs through peer review, automated testing, and secure coding standards; contributes learnings and reusable patterns to improve broader team effectiveness.
+Applies knowledge of tools within the Software Development Life Cycle toolchain, including enterprise-authorized AI-assisted development and automation capabilities, to improve the value realized by automation.
+ 
+
+ 
+
+Required qualifications, capabilities, and skills
+
+ 
+
+Formal training or certification on software engineering concepts and 3+ years applied experience
+Advanced python programming skills. Proven experience in building and operating scalable ML-driven products.
+Azure and/or AWS Certifications ( Architect, Big Data, AI/ML ) . Hands on experience in Azure and AWS.
+Proficiency with cloud technologies like Kubernetes, Airflow. Experience working in a highly regulated environment.
+Proven ability to iterate quickly. Proficient in all aspects of the Software Development Life Cycle.
+Terraform, IaaC experience. Experience with design & delivery of large scale cloud-native architectures.
+Experience with microservices performance tuning, performance optimization, real-time applications.
+Hands-on experience using enterprise-authorized AI-assisted software development tools within the work environment (e.g., for coding, test creation, troubleshooting, or documentation) with demonstrated ability to critically evaluate, validate, and refine AI-generated outputs for correctness, performance, and security.
+Understanding of responsible AI use in engineering workflows, including data sensitivity considerations, secure handling of inputs/outputs, and adherence to resiliency and security expectations; ability to guide peers on safe and effective usage within team practices.
+ 
+
+ 
+
+Preferred qualifications, capabilities, and skills
+
+Experience with financial data and data science. Experience in developing AI solutions using agentic frameworks.
+Experience fine-tuning LLMs with advanced techniques to enhance performance.
+Experience with prompt optimisation to improve the effectiveness of AI applications.
+Demonstrated ability to design and implement robust AI application architectures.

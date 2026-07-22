@@ -1,0 +1,159 @@
+
+import sys
+import os
+import json
+import streamlit as st
+
+
+if 'src.ranking' in sys.modules:
+    del sys.modules['src.ranking']
+
+# 1. Point directly to your Resume_Screening root directory
+project_root = r"C:\Users\Sanjay Desai\Resume_Screening"
+
+# 2. Add it to the top of Python's search path
+if project_root not in sys.path:
+    sys.path.insert(0, project_root)
+
+# 3. Import your class safely
+try:
+    from src.parser import ResumeParser
+    print("Success! ResumeParser imported perfectly.")
+    
+    from src.preprocess import TextPreprocessor
+    print("Success! TextPreprocessor imported perfectly.")
+
+    from src.extractor import ResumeExtractor
+    print("Success! ResumeExtractor imported")
+
+    from src.jd_processor import JDProcessor
+    from src.embedding import EmbeddingGenerator
+    from src.ranking import ResumeRanker
+    from config import *
+    from utils.helper import load_css
+    
+    
+    # Initialize your class object
+    parser = ResumeParser()
+    preprocessor = TextPreprocessor()
+    resume_extractor = ResumeExtractor()
+    jd=JDProcessor()
+    embedder = EmbeddingGenerator()
+    ranker = ResumeRanker() 
+
+    
+    resume = parser.read_pdf(r"C:\Users\Sanjay Desai\Resume_Screening\data\resumes\SANJAY_DESAI.pdf")
+    #print("Original Resume:\n",resume)
+
+    clean_resume = preprocessor.preprocess(resume)
+
+    #print("Cleaned Resume:\n", clean_resume)
+
+    print(f"""
+    Candidate Name: {resume_extractor.extract_name(resume)}
+    Email:          {resume_extractor.extract_email(resume)}
+    Phone:          {resume_extractor.extract_phone(resume)}
+    Skills:         {resume_extractor.extract_skills(resume)}
+    Education:      {resume_extractor.extract_education(resume)}
+    Experience:     {resume_extractor.extract_experience(resume)}
+    Certifications: {resume_extractor.extract_certification(resume)}
+    Projects:       {resume_extractor.extract_project(resume)}
+    """)
+
+    text=jd.read_jd(r"C:\Users\Sanjay Desai\Resume_Screening\data\jd\ml_engineer_jd.txt")
+    jd_details=jd.process(text)
+    print("Details of JD",jd_details)
+
+    if hasattr(jd, 'jd_details') and isinstance(jd.jd_details, dict):
+        clean_jd_input = jd.jd_details
+    elif hasattr(jd, 'raw_text'):
+        clean_jd_input = jd.raw_text
+    else:
+        # Fallback: try to see if it converts to a dictionary directly
+        clean_jd_input = vars(jd) 
+
+    
+    resume_embeddings = embedder.generate_embedding(clean_resume)
+    jd_embedding = embedder.generate_embedding(jd_details)  
+    index = embedder.create_faiss_index(resume_embeddings)  
+    distance,indexes = embedder.search(index,jd_embedding,k=3)  
+    print(indexes)  
+    print(distance)
+
+    structured_resume_input = {
+        "skills": resume_extractor.extract_skills(resume),
+        "experience": resume_extractor.extract_experience(resume),
+        "education": resume_extractor.extract_education(resume),
+        "certification": resume_extractor.extract_certification(resume)
+    }    
+
+    structured_jd_input = jd_details if isinstance(jd_details, dict) else clean_jd_input
+      
+    result = ranker.calculate_score(structured_resume_input,structured_jd_input,resume_embeddings,jd_embedding)   
+    print("Finnal_score",result)
+
+    st.set_page_config(
+        page_title = APP_TITLE,
+        page_icon = PAGE_ICON,
+        layout = LAYOUT,
+        initial_sidebar_state=SIDEBAR_STATE
+    )
+
+    css = load_css(r"C:\Users\Sanjay Desai\Resume_Screening\assets\style.css")
+    st.markdown(f"<style>{css}</style>", unsafe_allow_html = True)
+    st.markdown('<p class="main-title">AI Resume Screening System</p>', unsafe_allow_html = True)
+    st.divider()
+    st.sidebar.title("Navigation")
+    page = st.sidebar.radio("Select Page",["Dashboard","Upload Files","Results"])
+
+    if page=="Dashboard":
+        st.header("Dashboard")
+        st.write("Welcome to AI Resume Screening System")
+
+    elif page == "Upload Files":
+        with open(r"C:\Users\Sanjay Desai\Resume_Screening\Pages\upload.py","r",encoding="utf-8") as f:
+            exec(f.read())
+
+    elif page == "Results":
+        st.header("Results")
+        st.write("Ranking results will appear here.")
+
+    col1,col2,col3,col4 = st.columns(4)
+
+    with col1:
+        st.metric("Uploaded Resumes",0)
+
+    with col2:
+        st.metric("Job Description","Not Uploaded")
+
+    with col3:
+        st.metric("Best ATS Score","0%")
+
+    with col4:
+        st.metric("Candidates Ranked",0)
+
+    st.subheader("Workflow")
+    st.write('''
+    1️⃣ Upload Job Description
+    2️⃣ Upload Multiple Resumes
+    3️⃣ Resume Parsing
+    4️⃣ Text Cleaning
+    5️⃣ Information Extraction
+    6️⃣ Embedding Generation
+    7️⃣ ATS Score Calculation
+    8️⃣ Resume Ranking
+    ''')
+
+    st.markdown("---")
+    st.markdown('''
+    <div class='footer'>
+    Developed using
+    Python • Streamlit • NLP • Sentence Transformers • FAISS
+    </div>
+    ''',
+    unsafe_allow_html=True
+    )
+
+
+except ModuleNotFoundError as e:
+    print(f"Error: {e}")
