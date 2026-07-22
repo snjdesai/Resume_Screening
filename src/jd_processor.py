@@ -14,19 +14,29 @@ class JDProcessor:
         skills_path = os.path.join(project_root, "data", "skills.csv")
         
         # 3. Read the file cleanly
-        self.skills = pd.read_csv(skills_path)
+        #self.skills = pd.read_csv(skills_path)
+        self.skills = pd.read_csv(skills_path)["Skill"].dropna().astype(str).tolist()
 
     def read_jd(self, filepath):
         with open(filepath, "r", encoding="utf-8") as file:
             return file.read()
 
     def extract_skills(self, text):
-        extracted = []
-        text = text.lower()
+        skills = []
+        lower_text = text.lower()
+        
         for skill in self.skills:
-            if skill.lower() in text:
-                extracted.append(skill)
-        return list(set(extracted))
+            skill_clean = skill.strip().lower()
+            if not skill_clean:
+                continue
+                
+            # Use regex boundaries so "C" or "Go" doesn't match inside random words
+            # Escape skill name to prevent regex errors with special characters like C++
+            pattern = r'\b' + re.escape(skill_clean) + r'\b'
+            if re.search(pattern, lower_text):
+                skills.append(skill.strip())
+                
+        return list(set(skills))
 
     def extract_experience(self, text):
         return re.findall( r'(\d+)\+?\s*(?:years?|yrs?)', text.lower())

@@ -19,7 +19,8 @@ class ResumeExtractor:
         skills_path = os.path.join(project_root, "data", "skills.csv")
         
         # 3. Read the file cleanly
-        self.skills = pd.read_csv(skills_path)
+        #self.skills = pd.read_csv(skills_path)
+        self.skills = pd.read_csv(skills_path)["Skill"].dropna().astype(str).tolist()
 
         # self.skills = pd.read_csv(
         #     r"C:\Users\Sanjay Desai\Resume_Screening\data\skills.csv"
@@ -44,35 +45,35 @@ class ResumeExtractor:
         return phones[0] if phones else None
 
     def extract_skills(self, text):
-
         skills = []
-        lower = text.lower()
+        lower_text = text.lower()
+        
         for skill in self.skills:
-            if skill.lower() in lower:
-                skills.append(skill)
+            skill_clean = skill.strip().lower()
+            if not skill_clean:
+                continue
+                
+            # Use regex boundaries so "C" or "Go" doesn't match inside random words
+            # Escape skill name to prevent regex errors with special characters like C++
+            pattern = r'\b' + re.escape(skill_clean) + r'\b'
+            if re.search(pattern, lower_text):
+                skills.append(skill.strip())
+                
         return list(set(skills))
 
     def extract_education(self, text):
-
-        keywords = [
-            "b.tech",
-            "b.e",
-            "m.tech",
-            "master",
-            "mba",
-            "phd",
-        ]
-
+        keywords = ["b.tech", "b.e", "m.tech", "master", "mba", "phd", "bachelor", "university", "college"]
         edu = []
-        lower = text.lower()
-
-        for item in keywords:
-            if item in lower:
-                edu.append(lower)
-        return edu
+        
+        # FIXED: Iterate line by line to extract only education rows, not the whole text
+        for line in text.split("\n"):
+            line_lower = line.lower().strip()
+            if any(kw in line_lower for kw in keywords):
+                if line.strip():  # Avoid adding empty lines
+                    edu.append(line.strip())
+        return list(set(edu)) # Deduplicate lines
 
     def extract_experience(self, text):
-
         return re.findall( r'(\d+)\+?\s*(?:years?|yrs?)', text.lower())
 
     
@@ -92,7 +93,7 @@ class ResumeExtractor:
         projects = []
         for line in text.split("\n"):
             if "project" in line.lower():
-                project.append(line)
+                projects.append(line)
         return projects
 
     # def extract(self, text):

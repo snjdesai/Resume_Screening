@@ -37,19 +37,27 @@ class ResumeRanker:
         return self._convert_to_list(skills_block)
 
     def _extract_experience(self, text):
-        """Looks for years of experience mentioned in the profile text or variables."""
+        # 1. Handle cases where the input is already a number
         if isinstance(text, (int, float)):
-            return int(text)
-        if not isinstance(text, str):
-            return 0
-        exp_match = re.search(r'(\d+)\s*(?:\+)?\s*years?\s+of\s+experience', text, re.IGNORECASE)
-        if exp_match:
-            return int(exp_match.group(1))
-        # Backup simple digits search (e.g., if value is just "5 years")
-        digit_match = re.search(r'(\d+)\s*years?', text, re.IGNORECASE)
-        if digit_match:
-            return int(digit_match.group(1))
-        return 0 
+            return float(text)
+            
+        # 2. Check for empty or invalid inputs
+        if not text or not isinstance(text, str):
+            return 0.0
+            
+        # 3. Use regex to search for patterns like "4 years", "9+ yrs", "3-5 years"
+        text_lower = text.lower()
+        match = re.search(r'(\d+(?:\.\d+)?)\s*(?:year|yr|+/|-)', text_lower)
+        
+        if match:
+            return float(match.group(1))
+            
+        # 4. Fallback: Search for the absolute first standalone number in the text
+        backup_match = re.search(r'\d+(?:\.\d+)?', text)
+        if backup_match:
+            return float(backup_match.group(0))
+            
+        return 0.0
 
     def skill_score(self, resume_skills, jd_skills):
         # 1. Clean both inputs into uniform lowercase string arrays
@@ -76,8 +84,11 @@ class ResumeRanker:
 
     def experience_score(self, resume_exp, jd_exp):
         try:
-            r_exp = self._extract_experience(resume_exp)
-            j_exp = self._extract_experience(jd_exp)
+            print("exps",resume_exp,jd_exp)
+            r_exp = int(resume_exp[0])
+            print("resume_exp",r_exp,type(r_exp))
+            j_exp = int(jd_exp[0])
+            print("jd_exp",j_exp)
         except (ValueError, TypeError):
             return 0
 
@@ -85,8 +96,10 @@ class ResumeRanker:
             return self.experience_weight
 
         if r_exp >= j_exp:
+            print("greater")
             return self.experience_weight
         else:
+            print("lesser")
             return round((r_exp / j_exp) * self.experience_weight, 2)
 
     def education_score(self, resume_edu, jd_edu):

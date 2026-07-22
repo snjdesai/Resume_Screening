@@ -1,44 +1,47 @@
-We have an exciting and rewarding opportunity for you to take your software engineering career to the next level. 
+About the job
+What is the opportunity?
 
-As a Software Engineer III at JPMorgan Chase within the Asset & Wealth Management, you serve as a seasoned member of an agile team to design and deliver trusted market-leading technology products in a secure, stable, and scalable way. You are responsible for carrying out critical technology solutions across multiple technical areas within various business functions in support of the firm’s business objectives.
 
-Job responsibilities
 
- 
+Our platform manages millions of devices across multiple operating systems, requiring exceptional performance, scalability, availability, and resilience. You will join the AI Platform Team, the group responsible for building foundational AI capabilities across the Omnissa product ecosystem.
 
-Involves in building and operating highly sophisticated LLM driven applications.
-Partners directly with other technology teams on LLM projects to advise and assist as needed.
-Collaborates with Data Science, Cybersecurity to deliver state of the art ML products.
-Collaborates with Devops engineers to plan and deploy data storage and processing systems,
-Executes creative software solutions, design, development, and technical troubleshooting with ability to think beyond routine or conventional approaches to build solutions or break down technical problems.
-Develops secure high-quality production code, and reviews and debugs code written by others.
-Stays abreast of the latest advancements in AI technologies, and drive their integration into our operations.
-Leverages enterprise-authorized AI coding assist tools within the work environment to improve code quality, delivery speed, and productivity across complex deliverables (e.g., code generation/refactoring, unit test creation, documentation), while validating outputs through peer review, automated testing, and secure coding standards; contributes learnings and reusable patterns to improve broader team effectiveness.
-Applies knowledge of tools within the Software Development Life Cycle toolchain, including enterprise-authorized AI-assisted development and automation capabilities, to improve the value realized by automation.
- 
 
- 
 
-Required qualifications, capabilities, and skills
+As a Senior Data Scientist, you will lead and innovate within the data science team to drive significant advancements in our AI/ML and data analytics capabilities. This is a hands-on role, and you will be expected to develop AI/ML-based solutions, work closely with cross-functional teams to solve complex business problems, and contribute to the company’s vision through advanced analytics, machine learning, and artificial intelligence.
 
- 
 
-Formal training or certification on software engineering concepts and 3+ years applied experience
-Advanced python programming skills. Proven experience in building and operating scalable ML-driven products.
-Azure and/or AWS Certifications ( Architect, Big Data, AI/ML ) . Hands on experience in Azure and AWS.
-Proficiency with cloud technologies like Kubernetes, Airflow. Experience working in a highly regulated environment.
-Proven ability to iterate quickly. Proficient in all aspects of the Software Development Life Cycle.
-Terraform, IaaC experience. Experience with design & delivery of large scale cloud-native architectures.
-Experience with microservices performance tuning, performance optimization, real-time applications.
-Hands-on experience using enterprise-authorized AI-assisted software development tools within the work environment (e.g., for coding, test creation, troubleshooting, or documentation) with demonstrated ability to critically evaluate, validate, and refine AI-generated outputs for correctness, performance, and security.
-Understanding of responsible AI use in engineering workflows, including data sensitivity considerations, secure handling of inputs/outputs, and adherence to resiliency and security expectations; ability to guide peers on safe and effective usage within team practices.
- 
 
- 
+You’ll work closely with engineering and product teams to operationalize models across our cloud-scale environment while driving best-in-class ML engineering practices.
 
-Preferred qualifications, capabilities, and skills
 
-Experience with financial data and data science. Experience in developing AI solutions using agentic frameworks.
-Experience fine-tuning LLMs with advanced techniques to enhance performance.
-Experience with prompt optimisation to improve the effectiveness of AI applications.
-Demonstrated ability to design and implement robust AI application architectures.
+
+Responsibilities
+
+
+
+Lead the design and development of advanced data science and machine learning models using structured, unstructured, and semi-structured data.
+Work with engineers to design and implement scalable machine learning pipelines, covering all stages from data ingestion and feature extraction to training, testing, validation, inference, and continuous learning in production systems.
+Leverage key technologies and state-of-the-art tools necessary for data exploration, querying, visualization, and advanced analytics, including feature engineering, statistical analysis, and relationship discovery.
+Be an expert in and lead the development of AI/ML solutions based on Large Language Models (LLMs), Retrieval Augmented Generation (RAG), and AI Agents.
+Optimize ML models and pipelines for performance, scalability, reliability, and cost efficiency.
+Design and implement prompt engineering strategies to optimize the performance of LLM-based applications.
+Collaborate with cross-functional teams to integrate ML solutions into core platform features and services.
+Partner with engineering teams to deploy, monitor, and continuously improve AI/ML solutions in production environments.
+Contribute to the establishment of best practices for model evaluation, experimentation, governance, and responsible AI.
+
+
+Required Skills & Experience
+
+
+
+9 to 14 years of experience in data science, machine learning engineering, or applied AI roles.
+Hands-on experience with one or more of the following areas is required; experience across multiple areas is strongly preferred: supervised and unsupervised learning, classification and regression, clustering, time-series analysis, anomaly detection, recommendation systems, reinforcement learning, information retrieval, and natural language processing (NLP).
+Highly proficient in Python and working knowledge of at least one other programming language such as Java or C++.
+Extensive experience with AI/ML frameworks and libraries such as Scikit-learn, NumPy, Pandas, SciPy, and Hugging Face Transformers.
+Hands-on experience with Large Language Models (LLMs), including fine-tuning, prompt engineering, evaluation, and deployment.
+Knowledge of text embedding models and vector databases for Retrieval Augmented Generation (RAG) systems.
+Experience with orchestration frameworks (e.g., LangChain, LangGraph) to build AI agents and multi-agent systems.
+Familiarity with cloud platforms and tools such as AWS, Azure, or Google Cloud for development and deployment of scalable AI/ML models.
+Experience with distributed computing frameworks (e.g., Spark, Ray).
+Experience deploying and operating machine learning models in production environments.
+Strong understanding of software engineering fundamentals, including testing, version control, CI/CD, and observability.
