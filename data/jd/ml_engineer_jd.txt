@@ -1,47 +1,65 @@
-About the job
-What is the opportunity?
+We are looking for a highly skilled Machine Learning Engineer who can design, build, and own end-to-end ML systems in production. This role requires a strong blend of machine learning expertise, backend engineering, and full-stack development, with a focus on building reliable, scalable platforms used by leadership and critical business functions.
 
+Key Responsibilities
 
+Design, develop, and maintain end-to-end machine learning pipelines, including data ingestion, training, evaluation, deployment, monitoring, and retraining.
+Build and own production-grade ML services that are reliable, scalable, and fault-tolerant.
+Architect and manage async workflows and API-driven systems for ML and data services.
+Integrate ML solutions into complex production environments and distributed systems.
+Design robust systems with a strong focus on failure modes, observability, and guardrails to ensure reliability.
+Develop internal analytical tools used by leadership and cross-functional teams for decision-making.
+Develop interactive internal ML tools and dashboards using Streamlit for model insights, monitoring, and experimentation.
+Experience with cloud platforms (AWS, GCP, Azure).
+Collaborate with data scientists and stakeholders to deliver impactful solutions.
+Required Skills & Qualifications
 
-Our platform manages millions of devices across multiple operating systems, requiring exceptional performance, scalability, availability, and resilience. You will join the AI Platform Team, the group responsible for building foundational AI capabilities across the Omnissa product ecosystem.
+Core Engineering Skills
 
+Strong proficiency in Python, SQL, and building RESTful APIs
+Experience with asynchronous programming and workflows
+Solid understanding of software engineering best practices: Version control (bitbucket), Unit and integration testing, Code quality and maintainability
+Machine Learning & MLOps
 
+Build or integrate data ingestion pipelines (batch or streaming)
+Experience in performing EDA and understand the analysis.
+Proven experience managing the full ML lifecycle.
+Hands-on experience with MLOps practices and tools:
+Experiment tracking
+Model versioning
+Automated training and deployment pipelines
+CI/CD for ML systems
+Systems, Infrastructure & Orchestration
 
-As a Senior Data Scientist, you will lead and innovate within the data science team to drive significant advancements in our AI/ML and data analytics capabilities. This is a hands-on role, and you will be expected to develop AI/ML-based solutions, work closely with cross-functional teams to solve complex business problems, and contribute to the company’s vision through advanced analytics, machine learning, and artificial intelligence.
+Experience building scalable and reliable ML systems in production
+Familiarity with:
+Containerization (Docker)
+Orchestration platforms (e.g., Kubernetes, Airflow, Prefect, Dagster)
+Infrastructure as Code (IaC)
+Experience with distributed data processing systems (e.g., Spark)
+Understanding of workflow orchestration and scheduling for ML pipelines
+Full Stack Development
 
+Experience developing end-to-end applications, including:
+Backend pipelines and services
+Frontend/UI components
+Hands-on experience building internal ML dashboards and tools using Streamlit
+Ability to create intuitive interfaces for monitoring models, exploring data, and enabling stakeholder interaction
 
+Qualifications
 
-You’ll work closely with engineering and product teams to operationalize models across our cloud-scale environment while driving best-in-class ML engineering practices.
+Required Qualifications
 
+Master’s or PhD in Statistics, Data Science, Computer Science, or a related quantitative field.
+3–4+ years of experience in data science or machine learning pipeline.
+Strong expertise in statistical analysis and machine learning techniques.
+Proficiency in:
+Python (pandas, numpy, scikit-learn, statsmodels)
+SQL
+Data visualization tools
+Experience working with large-scale operational datasets.
+Preferred Qualifications
 
-
-Responsibilities
-
-
-
-Lead the design and development of advanced data science and machine learning models using structured, unstructured, and semi-structured data.
-Work with engineers to design and implement scalable machine learning pipelines, covering all stages from data ingestion and feature extraction to training, testing, validation, inference, and continuous learning in production systems.
-Leverage key technologies and state-of-the-art tools necessary for data exploration, querying, visualization, and advanced analytics, including feature engineering, statistical analysis, and relationship discovery.
-Be an expert in and lead the development of AI/ML solutions based on Large Language Models (LLMs), Retrieval Augmented Generation (RAG), and AI Agents.
-Optimize ML models and pipelines for performance, scalability, reliability, and cost efficiency.
-Design and implement prompt engineering strategies to optimize the performance of LLM-based applications.
-Collaborate with cross-functional teams to integrate ML solutions into core platform features and services.
-Partner with engineering teams to deploy, monitor, and continuously improve AI/ML solutions in production environments.
-Contribute to the establishment of best practices for model evaluation, experimentation, governance, and responsible AI.
-
-
-Required Skills & Experience
-
-
-
-9 to 14 years of experience in data science, machine learning engineering, or applied AI roles.
-Hands-on experience with one or more of the following areas is required; experience across multiple areas is strongly preferred: supervised and unsupervised learning, classification and regression, clustering, time-series analysis, anomaly detection, recommendation systems, reinforcement learning, information retrieval, and natural language processing (NLP).
-Highly proficient in Python and working knowledge of at least one other programming language such as Java or C++.
-Extensive experience with AI/ML frameworks and libraries such as Scikit-learn, NumPy, Pandas, SciPy, and Hugging Face Transformers.
-Hands-on experience with Large Language Models (LLMs), including fine-tuning, prompt engineering, evaluation, and deployment.
-Knowledge of text embedding models and vector databases for Retrieval Augmented Generation (RAG) systems.
-Experience with orchestration frameworks (e.g., LangChain, LangGraph) to build AI agents and multi-agent systems.
-Familiarity with cloud platforms and tools such as AWS, Azure, or Google Cloud for development and deployment of scalable AI/ML models.
-Experience with distributed computing frameworks (e.g., Spark, Ray).
-Experience deploying and operating machine learning models in production environments.
-Strong understanding of software engineering fundamentals, including testing, version control, CI/CD, and observability.
+Experience working with Databricks or AzureML.
+Familiarity with big data technologies (Spark, PySpark).
+Experience working with cloud platforms (AWS, Azure, or GCP).
+Knowledge of MLOps practices and model deployment frameworks.
